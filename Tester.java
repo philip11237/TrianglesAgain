@@ -6,5 +6,8 @@ public class Tester{
     Point coord3=new Point(0,0);
     System.out.println (coord2.distanceTo(coord3) );
     System.out.println (coord1.distanceTo(coord2) );
+    System.out.println (coord2.equals(coord3) );
+    System.out.println (coord1.equals(coord2) );
+    System.out.println (coord2.equals(coord2) );
   }
 }

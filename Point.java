@@ -24,5 +24,7 @@ public class Point{
     return Math.sqrt((other.getX()-this.getX())*(other.getX()-this.getX())
                     + (other.getY()-this.getY())*(other.getY()-this.getY()));
   }
-
+public boolean equals( Point other) {
+  return ((other.getX()==this.getX()) && (other.getY()==this.getY()));
+}
 }
