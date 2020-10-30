@@ -14,12 +14,13 @@ public class Triangle{
 
  }
  public String classify(){
-    double a = v1.distanceTo(v2);
-    double b = v2.distanceTo(v3);
-    double c = v1.distanceTo(v3);
+    double a = Math.round(10000*v1.distanceTo(v2))/10000.0;
+    double b = Math.round(10000*v2.distanceTo(v3))/10000.0;
+    double c = Math.round(10000*v1.distanceTo(v3))/10000.0;
+  //  System.out.println (a+" " +b+" " +c);
     if (a==c && a==b){
     return "equilateral";}
-    if (a==c || a==b){
+    if (a==c || a==b ||b==c){
     return "isosceles";}
     else {return  "scalene";}
  }
@@ -37,7 +38,19 @@ public class Triangle{
      return Math.sqrt(s*(s-a)*(s-b)*(s-c));
    }
    public String toString(){
-   "v1("+ v1.getX()+", "+v1.getY()+")"+" v2("+ v2.getX()+", "+ v2.getY()+")"+" v3("+ v3.getX()+", "+v3.getY()+")"
+   return "v1("+ v1.getX()+", "+v1.getY()+")"+" v2("+ v2.getX()+", "+ v2.getY()+")"+" v3("+ v3.getX()+", "+v3.getY()+")";
+   }
+   public void setVertex(int index, Point newP) {
+     if (index==0){
+       v1 = newP;
+     }
+     if (index==1){
+       v2 = newP;
+     }
+     if (index==2){
+       v3 = newP;
+     }
+
    }
   // The format should be "v1(23.0, 4.0) v2(-2.3, 5.001) v3(5.0, 0.52)"
 }
